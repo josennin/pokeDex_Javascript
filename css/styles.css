@@ -1,0 +1,54 @@
+
+body{
+    margin: 25px;
+    text-align: center;
+    font-size: 1.5em;
+}
+.imagen{
+   position: absolute;
+   right: 0;
+   top: 0;
+}
+#output{
+    font-size: 1em;
+}
+#contenedor{
+    display: inline-flex;
+}
+#numero{
+    margin-left: 15px;
+    margin-top: 10px;
+    width: 50px;
+    height: 30px;
+    font-size: 1.2em;
+}
+#boton{
+    margin-left: 30px;
+    margin-top: 10px;
+    font-size: 1.1em;
+    height: 60px;
+}
+.grande{
+    font-size: 2em;
+}
+.datosContainer{
+    margin-top: 25px;
+    font-size: 4em;
+}
+#pokeCont{
+   margin-top: 10px;
+   margin-right: 30px;
+}
+input{
+    font-size: 20px;
+    color: red;
+}
+.pokeimagen{
+    height: 200px;
+}
+.verde{
+    color:green;
+}
+.rojo{
+    color: red;
+}

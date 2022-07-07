@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    
+</head>
+
+<body id="contenedor">
+    <section id="app" class="section">
+        <div class="container">
+            <div class="box">
+               
+                
+                        <div class="field">
+                            
+                            <div class="control">
+                                <label class="label">Numero de Digimon:</label>
+                                <div class="field has-addons">
+                                    <p >
+                                        <input class="input" type="text" placeholder="#" v-model="id">
+                                    </p>
+                                    <p class="control">
+                                        <img src="imgs/digivice.png" id="boton" @click=searchId()>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            
+                            <div class="control">
+                                <label class="label">Nombre del Digimon:</label>
+                                <div class="field has-addons">
+                                    <p>
+                                        <input class="input" type="text" placeholder="nombre" v-model="name">
+                                    </p>
+                                    <p class="control">
+                                        <img src="imgs/digivice.png" id="boton" @click=searchId()>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <label class="label">Nivel del Digimon:</label>
+                                <div class="field has-addons">
+                                    <p class="control">
+                                        <input class="input" type="text" placeholder="Nivel" v-model="level">
+                                    </p>
+                                    <p class="control">
+                                        <img src="imgs/digivice.png" id="boton" @click=searchId()>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <article class="media" v-for="(digimon, index) in response">
+                            <figure class="media-left">
+                                <p class="image is-128x128">
+                                    <img :src="digimon.img">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <strong>{{ digimon.name }}</strong> <br><small>{{ digimon.level }}</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <div v-if="error.isVisible" class="notification is-warning">
+                            <button class="delete" @click="error.isVisible = false"></button>
+                            {{ error.message }}
+                        </div>
+                   
+                
+            </div>
+            <p><small>API inspiration from <a href="http://www.ectozone.net/digimon/codex/index2.html" target="_blank">Ectozone's Digidex</a> |&copy; Copyright 2020 por Jose Andres Brenes Arce.</small></p>
+        </div>
+    </section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/digi2.js"></script>
+</body>
+
+</html>
